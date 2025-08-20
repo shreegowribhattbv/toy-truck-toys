@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Dashboard - Toy Truck Toys</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/seller-dashboard.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="../../public/logo.svg" alt="Toy Truck Toys Logo" width="200">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">Seller Central</a></li>
+                    <li><a href="#">Help</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <div class="user-controls">
+                    <a href="#" class="account">👤 Seller Account</a>
+                    <a href="#" class="notifications">🔔 Notifications</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="seller-dashboard">
+        <div class="dashboard-sidebar">
+            <div class="seller-profile">
+                <div class="profile-image">👤</div>
+                <h3>Seller Name</h3>
+                <p>Toy Specialist</p>
+            </div>
+            <nav class="dashboard-nav">
+                <ul>
+                    <li class="active"><a href="#">Dashboard</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Orders</a></li>
+                    <li><a href="#">Analytics</a></li>
+                    <li><a href="#">Inventory</a></li>
+                    <li><a href="#">Settings</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="dashboard-content">
+            <div class="dashboard-header">
+                <h1>Seller Dashboard</h1>
+                <div class="date-range">
+                    <label for="date-range">Date Range:</label>
+                    <select id="date-range">
+                        <option>Last 7 days</option>
+                        <option>Last 30 days</option>
+                        <option>Last 90 days</option>
+                        <option>This year</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="stats-cards">
+                <div class="stat-card">
+                    <div class="stat-icon" style="background-color: #E3F2FD;">💰</div>
+                    <div class="stat-info">
+                        <h3>Total Sales</h3>
+                        <p class="stat-value">$12,450</p>
+                        <p class="stat-change positive">+15% from last period</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon" style="background-color: #E8F5E9;">📦</div>
+                    <div class="stat-info">
+                        <h3>Orders</h3>
+                        <p class="stat-value">156</p>
+                        <p class="stat-change positive">+8% from last period</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon" style="background-color: #FFF3E0;">👁️</div>
+                    <div class="stat-info">
+                        <h3>Product Views</h3>
+                        <p class="stat-value">3,240</p>
+                        <p class="stat-change positive">+22% from last period</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon" style="background-color: #F3E5F5;">⭐</div>
+                    <div class="stat-info">
+                        <h3>Average Rating</h3>
+                        <p class="stat-value">4.8/5</p>
+                        <p class="stat-change positive">+0.2 from last period</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-row">
+                <div class="dashboard-card sales-chart">
+                    <div class="card-header">
+                        <h2>Sales Performance</h2>
+                    </div>
+                    <div class="card-content">
+                        <!-- Placeholder for chart -->
+                        <div class="chart-placeholder" style="height: 300px; background-color: #f5f5f5; display: flex; align-items: center; justify-content: center;">
+                            <p>Sales Chart Visualization</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-card ai-insights">
+                    <div class="card-header">
+                        <h2>AI Insights</h2>
+                    </div>
+                    <div class="card-content">
+                        <div class="insight-item">
+                            <div class="insight-icon">🔍</div>
+                            <div class="insight-content">
+                                <h3>Inventory Alert</h3>
+                                <p>Your "Monster Truck Deluxe" is selling fast. Consider restocking within 7 days.</p>
+                            </div>
+                        </div>
+                        <div class="insight-item">
+                            <div class="insight-icon">💡</div>
+                            <div class="insight-content">
+                                <h3>Price Optimization</h3>
+                                <p>Increasing "Construction Truck Set" price by $2.50 could improve margins without affecting sales.</p>
+                            </div>
+                        </div>
+                        <div class="insight-item">
+                            <div class="insight-icon">📈</div>
+                            <div class="insight-content">
+                                <h3>Trend Alert</h3>
+                                <p>Fire truck toys are trending this month. Consider highlighting your fire truck products.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-row">
+                <div class="dashboard-card top-products">
+                    <div class="card-header">
+                        <h2>Top Selling Products</h2>
+                    </div>
+                    <div class="card-content">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Sales</th>
+                                    <th>Revenue</th>
+                                    <th>Rating</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="product-cell">
+                                            <div class="product-image" style="background-color: #f0f0f0;"></div>
+                                            <div class="product-name">Monster Truck Deluxe</div>
+                                        </div>
+                                    </td>
+                                    <td>42 units</td>
+                                    <td>₹78,719</td>
+                                    <td>★★★★☆ (4.2)</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="product-cell">
+                                            <div class="product-image" style="background-color: #f0f0f0;"></div>
+                                            <div class="product-name">Construction Truck Set</div>
+                                        </div>
+                                    </td>
+                                    <td>38 units</td>
+                                    <td>₹99,722</td>
+                                    <td>★★★★★ (4.8)</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="product-cell">
+                                            <div class="product-image" style="background-color: #f0f0f0;"></div>
+                                            <div class="product-name">Remote Control Fire Truck</div>
+                                        </div>
+                                    </td>
+                                    <td>27 units</td>
+                                    <td>₹101,230</td>
+                                    <td>★★★★☆ (4.4)</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="product-cell">
+                                            <div class="product-image" style="background-color: #f0f0f0;"></div>
+                                            <div class="product-name">Wooden Cargo Truck</div>
+                                        </div>
+                                    </td>
+                                    <td>25 units</td>
+                                    <td>$499.75</td>
+                                    <td>★★★★★ (4.9)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-row">
+                <div class="dashboard-card ai-catalog">
+                    <div class="card-header">
+                        <h2>AI-Assisted Catalog Management</h2>
+                    </div>
+                    <div class="card-content">
+                        <div class="upload-section">
+                            <h3>Quick Product Upload</h3>
+                            <p>Our AI will automatically generate product descriptions and optimize your images.</p>
+                            <div class="upload-area">
+                                <div class="upload-placeholder">
+                                    <div class="upload-icon">📷</div>
+                                    <p>Drag & drop product images here or click to browse</p>
+                                    <input type="file" id="product-images" multiple style="display: none;">
+                                    <button class="btn secondary" onclick="document.getElementById('product-images').click()">Select Images</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ai-preview">
+                            <h3>AI-Generated Preview</h3>
+                            <div class="preview-container">
+                                <div class="preview-image" style="background-color: #f0f0f0;">
+                                    <p>Product Image Preview</p>
+                                </div>
+                                <div class="preview-content">
+                                    <div class="form-group">
+                                        <label for="product-name">Product Name</label>
+                                        <input type="text" id="product-name" value="Deluxe City Construction Truck" class="ai-generated">
+                                        <span class="ai-badge">AI Generated</span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="product-description">Product Description</label>
+                                        <textarea id="product-description" rows="4" class="ai-generated">This premium construction truck toy features realistic details, durable construction, and moving parts. Perfect for children ages 3-8 who love building and imaginative play. The truck includes a functional dump bed, rotating cab, and detailed construction elements.</textarea>
+                                        <span class="ai-badge">AI Generated</span>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="product-price">Suggested Price</label>
+                                            <input type="text" id="product-price" value="$34.99" class="ai-generated">
+                                            <span class="ai-badge">AI Suggested</span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="product-category">Category</label>
+                                            <select id="product-category" class="ai-generated">
+                                                <option selected>Construction Toys</option>
+                                                <option>Vehicles</option>
+                                                <option>Educational Toys</option>
+                                                <option>Outdoor Toys</option>
+                                            </select>
+                                            <span class="ai-badge">AI Suggested</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="product-age">Age Range</label>
+                                            <select id="product-age" class="ai-generated">
+                                                <option>0-2 years</option>
+                                                <option selected>3-5 years</option>
+                                                <option>6-8 years</option>
+                                                <option>9-12 years</option>
+                                                <option>12+ years</option>
+                                            </select>
+                                            <span class="ai-badge">AI Suggested</span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="product-tags">Tags</label>
+                                            <input type="text" id="product-tags" value="construction, truck, vehicle, building, outdoor play" class="ai-generated">
+                                            <span class="ai-badge">AI Generated</span>
+                                        </div>
+                                    </div>
+                                    <div class="preview-actions">
+                                        <button class="btn primary">Save Product</button>
+                                        <button class="btn secondary">Edit Details</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>Seller Resources</h3>
+                    <ul>
+                        <li><a href="#">Seller Guidelines</a></li>
+                        <li><a href="#">Shipping Options</a></li>
+                        <li><a href="#">Pricing Strategies</a></li>
+                        <li><a href="#">Marketing Tools</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Seller Help Center</a></li>
+                        <li><a href="#">Contact Support</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Community Forum</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#">Seller Terms</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Return Policy</a></li>
+                        <li><a href="#">Intellectual Property</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Toy Truck Toys. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../utils/main.js"></script>
+    <script src="../utils/seller-dashboard.js"></script>
+</body>
+</html>

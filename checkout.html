@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Toy Truck Toys</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/checkout.css">
+    <link rel="icon" href="../../public/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-wrapper">
+                <div class="logo-container">
+                    <a href="index.html">
+                        <img src="../../public/logo.svg" alt="Toy Truck Toys" class="logo">
+                    </a>
+                </div>
+                <nav class="main-nav">
+                    <ul class="nav-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#">Shop</a></li>
+                        <li><a href="#">Sellers</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Community</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <button class="search-toggle"><span class="icon">🔍</span></button>
+                    <a href="#" class="account-link"><span class="icon">👤</span></a>
+                    <a href="#" class="cart-link">
+                        <span class="icon">🛒</span>
+                        <span class="cart-count">3</span>
+                    </a>
+                    <button class="mobile-menu-toggle">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="checkout-page">
+        <div class="container">
+            <div class="checkout-header">
+                <h1>Checkout</h1>
+                <div class="checkout-progress">
+                    <div class="progress-step active">
+                        <div class="step-number">1</div>
+                        <div class="step-label">Cart</div>
+                    </div>
+                    <div class="progress-line active"></div>
+                    <div class="progress-step active current">
+                        <div class="step-number">2</div>
+                        <div class="step-label">Checkout</div>
+                    </div>
+                    <div class="progress-line"></div>
+                    <div class="progress-step">
+                        <div class="step-number">3</div>
+                        <div class="step-label">Confirmation</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="checkout-content">
+                <div class="checkout-main">
+                    <!-- Shipping Information -->
+                    <section class="checkout-section shipping-section">
+                        <div class="section-header">
+                            <h2>Shipping Information</h2>
+                            <button class="edit-button" id="edit-shipping">Edit</button>
+                        </div>
+                        <div class="section-content">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="first-name">First Name</label>
+                                    <input type="text" id="first-name" name="first-name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="last-name">Last Name</label>
+                                    <input type="text" id="last-name" name="last-name" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="address">Address</label>
+                                <input type="text" id="address" name="address" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="city">City</label>
+                                    <input type="text" id="city" name="city" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="state">State</label>
+                                    <select id="state" name="state" required>
+                                        <option value="" disabled selected>Select State</option>
+                                        <option value="AL">Alabama</option>
+                                        <option value="AK">Alaska</option>
+                                        <!-- More states would be listed here -->
+                                        <option value="WY">Wyoming</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="zip">ZIP Code</label>
+                                    <input type="text" id="zip" name="zip" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="country">Country</label>
+                                    <select id="country" name="country" required>
+                                        <option value="US">United States</option>
+                                        <option value="CA">Canada</option>
+                                        <option value="UK">United Kingdom</option>
+                                        <!-- More countries would be listed here -->
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group shipping-options">
+                                <label class="section-label">Shipping Method</label>
+                                <div class="radio-group">
+                                    <label class="radio-option">
+                                        <input type="radio" name="shipping" value="standard" checked>
+                                        <div class="option-content">
+                                            <div class="option-main">
+                                                <span class="option-name">Standard Shipping</span>
+                                                <span class="option-price">Free</span>
+                                            </div>
+                                            <div class="option-description">Delivery in 3-5 business days</div>
+                                        </div>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="shipping" value="express">
+                                        <div class="option-content">
+                                            <div class="option-main">
+                                                <span class="option-name">Express Shipping</span>
+                                            <span class="option-price">₹374</span>
+                                            </div>
+                                            <div class="option-description">Delivery in 1-2 business days</div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <button class="primary-button" id="save-shipping">Save & Continue</button>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Payment Information -->
+                    <section class="checkout-section payment-section">
+                        <div class="section-header">
+                            <h2>Payment Method</h2>
+                            <button class="edit-button" id="edit-payment" disabled>Edit</button>
+                        </div>
+                        <div class="section-content disabled">
+                            <div class="payment-options">
+                                <div class="payment-tabs">
+                                    <button class="payment-tab active" data-tab="card">Credit/Debit Card</button>
+                                    <button class="payment-tab" data-tab="upi">UPI</button>
+                                    <button class="payment-tab" data-tab="wallet">Digital Wallet</button>
+                                    <button class="payment-tab" data-tab="cod">Cash on Delivery</button>
+                                </div>
+                                
+                                <!-- Credit Card Form -->
+                                <div class="payment-tab-content active" id="card-tab">
+                                    <div class="form-group">
+                                        <label for="card-number">Card Number</label>
+                                        <div class="card-input-wrapper">
+                                            <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456" maxlength="19">
+                                            <div class="card-icons">
+                                                <span class="card-icon visa">Visa</span>
+                                                <span class="card-icon mastercard">Mastercard</span>
+                                                <span class="card-icon amex">Amex</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="card-name">Cardholder Name</label>
+                                            <input type="text" id="card-name" name="card-name" placeholder="Name on card">
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="expiry">Expiry Date</label>
+                                            <input type="text" id="expiry" name="expiry" placeholder="MM/YY" maxlength="5">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="cvv">CVV</label>
+                                            <input type="text" id="cvv" name="cvv" placeholder="123" maxlength="4">
+                                            <div class="cvv-hint">3 or 4 digits on back of card</div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group save-card">
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" name="save-card" checked>
+                                            <span class="checkbox-text">Save card for future purchases</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <!-- UPI Form -->
+                                <div class="payment-tab-content" id="upi-tab">
+                                    <div class="form-group">
+                                        <label for="upi-id">UPI ID</label>
+                                        <input type="text" id="upi-id" name="upi-id" placeholder="username@upi">
+                                    </div>
+                                    <div class="upi-apps">
+                                        <label class="upi-app-option">
+                                            <input type="radio" name="upi-app" value="gpay">
+                                            <div class="app-icon gpay">Google Pay</div>
+                                        </label>
+                                        <label class="upi-app-option">
+                                            <input type="radio" name="upi-app" value="phonepe">
+                                            <div class="app-icon phonepe">PhonePe</div>
+                                        </label>
+                                        <label class="upi-app-option">
+                                            <input type="radio" name="upi-app" value="paytm">
+                                            <div class="app-icon paytm">Paytm</div>
+                                        </label>
+                                        <label class="upi-app-option">
+                                            <input type="radio" name="upi-app" value="other">
+                                            <div class="app-icon other-upi">Other</div>
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <!-- Digital Wallet Form -->
+                                <div class="payment-tab-content" id="wallet-tab">
+                                    <div class="wallet-options">
+                                        <label class="wallet-option">
+                                            <input type="radio" name="wallet" value="paypal">
+                                            <div class="wallet-content">
+                                                <div class="wallet-icon paypal">PayPal</div>
+                                                <div class="wallet-name">PayPal</div>
+                                            </div>
+                                        </label>
+                                        <label class="wallet-option">
+                                            <input type="radio" name="wallet" value="applepay">
+                                            <div class="wallet-content">
+                                                <div class="wallet-icon applepay">Apple Pay</div>
+                                                <div class="wallet-name">Apple Pay</div>
+                                            </div>
+                                        </label>
+                                        <label class="wallet-option">
+                                            <input type="radio" name="wallet" value="amazonpay">
+                                            <div class="wallet-content">
+                                                <div class="wallet-icon amazonpay">Amazon Pay</div>
+                                                <div class="wallet-name">Amazon Pay</div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="wallet-note">
+                                        You'll be redirected to complete payment after reviewing your order.
+                                    </div>
+                                </div>
+                                
+                                <!-- COD Form -->
+                                <div class="payment-tab-content" id="cod-tab">
+                                    <div class="cod-info">
+                                        <div class="cod-icon">💵</div>
+                                        <div class="cod-details">
+                                            <h3>Cash on Delivery</h3>
+                                            <p>Pay with cash when your order is delivered. A small COD fee of ₹40 will be added to your total.</p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group cod-note">
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" name="cod-confirm" required>
+                                            <span class="checkbox-text">I understand that I need to have the exact amount ready at the time of delivery.</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <button class="primary-button" id="save-payment">Review Order</button>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Order Review -->
+                    <section class="checkout-section review-section">
+                        <div class="section-header">
+                            <h2>Review Order</h2>
+                            <button class="edit-button" id="edit-review" disabled>Edit</button>
+                        </div>
+                        <div class="section-content disabled">
+                            <div class="review-details">
+                                <div class="review-shipping">
+                                    <h3>Shipping To:</h3>
+                                    <div class="shipping-address" id="review-shipping-address">
+                                        <p>Please complete shipping information</p>
+                                    </div>
+                                </div>
+                                <div class="review-payment">
+                                    <h3>Payment Method:</h3>
+                                    <div class="payment-method" id="review-payment-method">
+                                        <p>Please select payment method</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <button class="primary-button" id="place-order">Place Order</button>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Order Summary -->
+                <div class="checkout-sidebar">
+                    <div class="order-summary">
+                        <h2>Order Summary</h2>
+                        <div class="cart-items">
+                            <div class="cart-item">
+                                <div class="item-image">
+                                    <img src="../../public/placeholder-product-1.svg" alt="Deluxe City Construction Truck">
+                                </div>
+                                <div class="item-details">
+                                    <div class="item-name">Deluxe City Construction Truck</div>
+                                    <div class="item-variant">Color: Yellow</div>
+                                    <div class="item-price-qty">
+                                        <span class="item-price">₹1,874</span>
+                                        <span class="item-qty">Qty: 1</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cart-item">
+                                <div class="item-image">
+                                    <img src="../../public/placeholder-product-2.svg" alt="Monster Truck Racer">
+                                </div>
+                                <div class="item-details">
+                                    <div class="item-name">Monster Truck Racer</div>
+                                    <div class="item-variant">Color: Red</div>
+                                    <div class="item-price-qty">
+                                        <span class="item-price">₹1,499</span>
+                                        <span class="item-qty">Qty: 2</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cart-actions">
+                            <a href="#" class="edit-cart-link">Edit Cart</a>
+                        </div>
+                        <div class="promo-code">
+                            <div class="form-group">
+                                <label for="promo">Promo Code</label>
+                                <div class="promo-input">
+                                    <input type="text" id="promo" name="promo" placeholder="Enter code">
+                                    <button class="apply-promo">Apply</button>
+                                </div>
+                            </div>
+                            <div class="ai-promo-suggestion">
+                                <div class="ai-icon">🤖</div>
+                                <div class="ai-message">Try code <strong>NEWTRUCK10</strong> for 10% off!</div>
+                            </div>
+                        </div>
+                        <div class="order-totals">
+                            <div class="total-row">
+                                <span class="total-label">Subtotal</span>
+                                <span class="total-value">₹4,872</span>
+                            </div>
+                            <div class="total-row">
+                                <span class="total-label">Shipping</span>
+                                <span class="total-value">Free</span>
+                            </div>
+                            <div class="total-row">
+                                <span class="total-label">Tax</span>
+                                <span class="total-value">₹390</span>
+                            </div>
+                            <div class="total-row discount hidden">
+                                <span class="total-label">Discount</span>
+                                <span class="total-value">-₹488</span>
+                            </div>
+                            <div class="total-row grand-total">
+                                <span class="total-label">Total</span>
+                                <span class="total-value">₹5,262</span>
+                            </div>
+                        </div>
+                        <div class="order-security">
+                            <div class="security-badge">
+                                <span class="security-icon">🔒</span>
+                                <span class="security-text">Secure Checkout</span>
+                            </div>
+                            <div class="payment-icons">
+                                <span class="payment-icon visa">Visa</span>
+                                <span class="payment-icon mastercard">Mastercard</span>
+                                <span class="payment-icon amex">Amex</span>
+                                <span class="payment-icon paypal">PayPal</span>
+                                <span class="payment-icon applepay">Apple Pay</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="need-help">
+                        <h3>Need Help?</h3>
+                        <div class="help-options">
+                            <a href="#" class="help-option">
+                                <span class="help-icon">💬</span>
+                                <span class="help-text">Chat with AI Assistant</span>
+                            </a>
+                            <a href="#" class="help-option">
+                                <span class="help-icon">📞</span>
+                                <span class="help-text">Call Customer Support</span>
+                            </a>
+                            <a href="#" class="help-option">
+                                <span class="help-icon">📧</span>
+                                <span class="help-text">Email Us</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-column">
+                    <h3>Shop</h3>
+                    <ul>
+                        <li><a href="#">New Arrivals</a></li>
+                        <li><a href="#">Best Sellers</a></li>
+                        <li><a href="#">Age Groups</a></li>
+                        <li><a href="#">Toy Types</a></li>
+                        <li><a href="#">Brands</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Sell</h3>
+                    <ul>
+                        <li><a href="#">Become a Seller</a></li>
+                        <li><a href="#">Seller Dashboard</a></li>
+                        <li><a href="#">Seller Guidelines</a></li>
+                        <li><a href="#">Success Stories</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns & Refunds</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h3>Join Our Newsletter</h3>
+                    <p>Get toy recommendations, parenting tips, and exclusive offers!</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit" class="primary-button">Subscribe</button>
+                    </form>
+                    <div class="social-links">
+                        <a href="#" class="social-link">Facebook</a>
+                        <a href="#" class="social-link">Instagram</a>
+                        <a href="#" class="social-link">Twitter</a>
+                        <a href="#" class="social-link">YouTube</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; 2023 Toy Truck Toys. All rights reserved.
+                </div>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Accessibility</a>
+                    <a href="#">Cookie Settings</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Order Confirmation Modal -->
+    <div class="modal" id="order-confirmation-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Order Confirmed!</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="confirmation-icon">✅</div>
+                <div class="confirmation-message">
+                    <h3>Thank you for your order!</h3>
+                    <p>Your order #TT78945 has been placed successfully.</p>
+                    <p>We've sent a confirmation email to <span id="confirmation-email">your@email.com</span>.</p>
+                </div>
+                <div class="order-details">
+                    <div class="detail-row">
+                        <span class="detail-label">Estimated Delivery:</span>
+                        <span class="detail-value" id="estimated-delivery">June 15-18, 2023</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Shipping Address:</span>
+                        <span class="detail-value" id="confirmation-address">123 Main St, Anytown, CA 12345</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Payment Method:</span>
+                        <span class="detail-value" id="confirmation-payment">Visa ending in 1234</span>
+                    </div>
+                </div>
+                <div class="loyalty-points">
+                    <div class="points-icon">🏆</div>
+                    <div class="points-message">
+                        <h3>You earned 70 Loyalty Points!</h3>
+                        <p>You're now 130 points away from your next reward.</p>
+                        <div class="points-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 35%;"></div>
+                            </div>
+                            <div class="progress-labels">
+                                <span>0</span>
+                                <span>200</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="secondary-button">Track Order</a>
+                <a href="index.html" class="primary-button">Continue Shopping</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI Chatbot -->
+    <div class="chatbot-container">
+        <div class="chatbot-header">
+            <h3>AI Assistant</h3>
+            <button class="close-chatbot">&times;</button>
+        </div>
+        <div class="chatbot-messages">
+            <div class="message bot">
+                <div class="message-avatar">🤖</div>
+                <div class="message-content">
+                    <p>Hi there! Need help with your checkout? I can answer questions about shipping, payment methods, or help you find the perfect toy!</p>
+                </div>
+            </div>
+        </div>
+        <div class="chatbot-suggestions">
+            <div class="suggestion-chip">When will my order arrive?</div>
+            <div class="suggestion-chip">Do you offer gift wrapping?</div>
+            <div class="suggestion-chip">Can I change my address?</div>
+        </div>
+        <div class="chatbot-input">
+            <input type="text" placeholder="Type your question here...">
+            <button class="voice-input">🎤</button>
+            <button class="send-message">📤</button>
+        </div>
+    </div>
+    <button class="chatbot-toggle">
+        <span class="chatbot-icon">🤖</span>
+        <span class="chatbot-label">Help</span>
+    </button>
+
+    <!-- Placeholder SVGs for demo purposes -->
+    <svg id="placeholder-product-1" width="100" height="100" viewBox="0 0 100 100" style="display: none;">
+        <rect width="100" height="100" fill="#FFC107"></rect>
+        <path d="M20,70 L20,50 L40,50 L50,40 L80,40 L80,70 Z" fill="#FFE082" stroke="#FFA000" stroke-width="2"></path>
+        <circle cx="30" cy="70" r="8" fill="#424242"></circle>
+        <circle cx="70" cy="70" r="8" fill="#424242"></circle>
+    </svg>
+    
+    <svg id="placeholder-product-2" width="100" height="100" viewBox="0 0 100 100" style="display: none;">
+        <rect width="100" height="100" fill="#F44336"></rect>
+        <path d="M15,65 L25,45 L45,45 L55,35 L75,35 L85,45 L85,65 Z" fill="#FFCDD2" stroke="#D32F2F" stroke-width="2"></path>
+        <circle cx="30" cy="70" r="10" fill="#424242"></circle>
+        <circle cx="70" cy="70" r="10" fill="#424242"></circle>
+    </svg>
+
+    <script src="../utils/main.js"></script>
+    <script src="../utils/checkout.js"></script>
+</body>
+</html>
